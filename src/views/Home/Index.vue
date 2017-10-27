@@ -1,9 +1,16 @@
 <template>
-  <span>Hello Vue!!!</span>
+<div>
+  <NavBar/>
+</div>
 </template>
 
 <script>
+import NavBar from '@/components/nav/NavBar'
+
 export default {
-  name: 'index'
+  name: 'index',
+  components: {
+    NavBar
+  }
 }
 </script>
