@@ -13,7 +13,7 @@
         </div>
         <div class="content">
           <span>
-            再见我的爱，wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
           </span>
         </div>
       </div>
