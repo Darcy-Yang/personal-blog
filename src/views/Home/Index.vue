@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <NavBar/>
     <div class="whole">
       <div class="navbar">
@@ -119,10 +119,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.main {
+  margin: -8px;
+}
 .whole {
   background: rgb(245, 245, 245);
 }
 .navbar {
+  margin-top: -8px;
   display: flex;
   flex-direction: column;
   .content-nav {
@@ -137,7 +142,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   .article {
-    margin: 0px 10px 20px 10px;
+    margin: 0px 10px 28px 10px;
     width: 22%;
     height: 522px;
     background: white;
