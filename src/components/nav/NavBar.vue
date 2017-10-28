@@ -1,7 +1,8 @@
 <template>
 <div class="main">
+  <span v-if="showAuthor">{{ author }}</span>
   <ul class="nav">
-    <li v-for="item in items"><a :href="item.href">{{item.name}}</a></li>
+    <li v-for="item in items"><a :style="fontStyle" :href="item.href">{{item.name}}</a></li>
   </ul>
 </div>
 </template>
@@ -9,15 +10,29 @@
 <script>
 export default {
   name: 'navbar',
-  data () {
-    return {
-      items: [
+  props: {
+    showAuthor: {
+      type: Boolean,
+      default: true
+    },
+    fontStyle: {
+      type: String,
+      default: ''
+    },
+    items: {
+      type: Array,
+      default: () => [
         { name: '文章', href: '#' },
         { name: '文章', href: '#' },
         { name: '文章', href: '#' },
         { name: '文章', href: '#' },
         { name: '关于我', href: '#' }
       ]
+    }
+  },
+  data () {
+    return {
+      author: 'Daniel Yang'
     }
   }
 }
@@ -26,14 +41,19 @@ export default {
 <style lang="less" scoped>
 .main {
   display: flex;
-  margin-right: 120px;
+  margin: 0px 120px 36px 40px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  span {
+    font-size: 24px;
+    font-weight: bold;
+  }
   li {
     float: left;
     margin-right: 60px;
     list-style: none;
     a {
+      color: gray;
       text-decoration: none;
     }
   }
