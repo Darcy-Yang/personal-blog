@@ -41,7 +41,7 @@ export default {
 <style lang="less" scoped>
 .main {
   display: flex;
-  margin: 0px 120px 36px 40px;
+  margin: 18px 120px 18px 40px;
   align-items: center;
   justify-content: space-between;
   span {

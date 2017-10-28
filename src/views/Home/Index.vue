@@ -1,95 +1,97 @@
 <template>
-  <div>
+  <div class="main">
     <NavBar/>
-    <div class="navbar">
-      <NavBar class="content-nav" :showAuthor="showAuthor" :fontStyle="fontStyle" :items="items" />
-    </div>
-    <div class="display">
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
+    <div class="whole">
+      <div class="navbar">
+        <NavBar class="content-nav" :showAuthor="showAuthor" :fontStyle="fontStyle" :items="items" />
+      </div>
+      <div class="display">
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
         </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
+        </div>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
+        </div>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
+        </div>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
+        </div>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
+        </div>
+        <div class="article">
+          <img src='../../assets/image.png' alt="photo"/></br>
+          <div class="arrow"></div>
+          <div class="title">
+            <span>Hello-Hello</span></br>
+          </div>
+          <div class="content">
+            <span>
+              再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+            </span>
+          </div>
         </div>
       </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-      <div class="article">
-        <img src='../../assets/image.png' alt="photo"/></br>
-        <div class="arrow"></div>
-        <div class="title">
-          <span>Hello-Hello</span></br>
-        </div>
-        <div class="content">
-          <span>
-            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
-          </span>
-        </div>
-      </div>
-    </div>
+   </div> 
   </div>
 </template>
 
@@ -117,27 +119,32 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.main {
+  margin: -8px;
+}
+.whole {
+  background: rgb(245, 245, 245);
+}
 .navbar {
+  margin-top: -8px;
   display: flex;
   flex-direction: column;
   .content-nav {
     align-self: flex-end;
     font-size: 18px;
-    background: lightgray;
   }
 }
 .display {
+  margin: 0px 20px;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  background: lightgray;
   .article {
-    margin: 0px 10px 20px 10px;
-    width: 20%;
+    margin: 0px 10px 28px 10px;
+    width: 22%;
     height: 522px;
-    border: 1px solid orange;
     background: white;
     img {
       width: 100%;
