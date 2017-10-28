@@ -17,6 +17,78 @@
           </span>
         </div>
       </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
+      <div class="article">
+        <img src='../../assets/image.png' alt="photo"/></br>
+        <div class="arrow"></div>
+        <div class="title">
+          <span>Hello-Hello</span></br>
+        </div>
+        <div class="content">
+          <span>
+            再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,18 +123,26 @@ export default {
   .content-nav {
     align-self: flex-end;
     font-size: 18px;
+    background: lightgray;
   }
 }
-
 .display {
-  img {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: lightgray;
+  .article {
+    margin: 0px 10px 20px 10px;
+    width: 20%;
+    height: 522px;
+    border: 1px solid orange;
+    background: white;
+    img {
       width: 100%;
       height: 215px;
     }
-  .article {
-    width: 25%;
-    height: 542px;
-    border: 1px solid orange;
     .arrow {
       width: 0;
       height: 0;
