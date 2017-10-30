@@ -51,8 +51,7 @@ export default {
   },
   methods: {
     read (item) {
-      this.$emit('showArticle', item.id)
-      this.$router.push({ name: 'article', params: { article: this.article } })
+      this.$router.push({ name: 'article', params: { id: item.id, article: this.article } })
     }
   }
 }
