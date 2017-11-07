@@ -26,13 +26,14 @@ export default {
     addArticle () {
       var title = this.title
       var content = this.content
-      // 需要进行封装📦
+      // 需要进行封装，同时把vue－resource替换成axios；
       this.$http.post('/api/article/addArticle', {
         title: title,
         content: content
       }, {}).then((response) => {
         console.log(response)
       })
+      this.$router.push('/')
     }
   }
 }

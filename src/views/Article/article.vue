@@ -23,7 +23,7 @@ export default {
   },
   data () {
     return {
-      article: this.$route.params.article[this.$route.params.id]
+      article: this.$route.params.article[this.$route.params.id - 1]
     }
   }
 }

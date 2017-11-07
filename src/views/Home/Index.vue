@@ -26,6 +26,11 @@
 <script>
 import NavBar from '@/components/nav/NavBar'
 
+import Vue from 'vue'
+import vueResource from 'vue-resource'
+
+Vue.use(vueResource)
+
 export default {
   name: 'index',
   components: {
@@ -39,15 +44,16 @@ export default {
         { name: '优选', href: '#' },
         { name: '优选', href: '#' },
         { name: '优选', href: '#' },
-        { name: '优选', href: '#' }
+        { name: '写文章', href: '#/write' }
       ],
-      article: [
-        { id: 0, title: 'Hello-Hello', content: '再见我的爱，I wanna say goodbye；再见我的过去，I want a new life；再见我的眼泪，跌倒和失败；再见那个年少青春的时代；' },
-        { id: 1, title: 'Today', content: '明年今日，别要再失眠；床褥都改变，离开你六十年；但愿能够认出你的子女，离别也听得到你讲 再见；' },
-        { id: 2, title: 'Mr Lonely', content: '我想我会一直孤单，一辈子都这么孤单；我想我会一直孤单，这样孤单一辈子；想过的将就一点，却发现将就更难；于是我学着乐观，这样孤单一辈子；当孤单已经变成一种习惯，习惯到我已经不再去想该怎么办；就算心烦意乱，就算没有人作伴；自由和落寞之间怎么换算，我独自走在街上看着天空找不到答案，我也没有答案；' },
-        { id: 3, title: 'Happy Time', content: '让我有个美满旅程，让我记得有多高兴；让我有勇气去喊停，没有结局也可即兴；时间尚早，别睁开眼睛；长路漫漫是如何走过，宁愿让乐极忘形的我；毫无代价唱最幸福的歌，愿我可...' }
-      ]
+      article: null
     }
+  },
+  created () {
+    this.$http.get('/api/article/allArticle').then((response) => {
+      console.log(response.body)
+      this.article = response.body
+    })
   },
   methods: {
     read (item) {

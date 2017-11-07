@@ -2,6 +2,9 @@
   var sqlMap = {
     article: {
       add: 'insert into article(title, content) values (?,?)'
+    },
+    getArticle: {
+      get: 'select * from article'
     }
   }
 
