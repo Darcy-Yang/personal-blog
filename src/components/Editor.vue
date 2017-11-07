@@ -1,14 +1,40 @@
 <template>
   <div class="main">
-    <input class="title" type="text" placeholder="标题"/>
-    <textarea class="content" placeholder="想说的..."></textarea>
-    <button class="submit">提交</button>
+    <form>
+      <input class="title" type="text" placeholder="标题" v-model="title"/>
+      <textarea class="content" placeholder="想说的..." v-model="content"></textarea>
+      <button class="submit" @click="addArticle">提交</button>
+    </form>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import vueResource from 'vue-resource'
+
+Vue.use(vueResource)
+
 export default {
-  name: 'editor'
+  name: 'editor',
+  data () {
+    return {
+      title: '',
+      content: ''
+    }
+  },
+  methods: {
+    addArticle () {
+      var title = this.title
+      var content = this.content
+      // 需要进行封装📦
+      this.$http.post('/api/article/addArticle', {
+        title: title,
+        content: content
+      }, {}).then((response) => {
+        console.log(response)
+      })
+    }
+  }
 }
 </script>
 
