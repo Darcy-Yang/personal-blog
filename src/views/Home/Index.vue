@@ -51,13 +51,14 @@ export default {
   },
   created () {
     this.$http.get('/api/article/allArticle').then((response) => {
-      console.log(response.body)
       this.article = response.body
     })
   },
   methods: {
     read (item) {
-      this.$router.push({ name: 'article', params: { id: item.id, article: this.article } })
+      this.$http.post('/api/article/findById', {id: item.id}, {}).then((response) => {
+        this.$router.push({ name: 'article', params: { article: response.body[0] } })
+      })
     }
   }
 }

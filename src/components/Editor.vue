@@ -2,9 +2,10 @@
   <div class="main">
     <form>
       <input class="title" type="text" placeholder="标题" v-model="title"/>
+      <input class="img" type="file" placeholder="上传封面图片" @change="uploadImg"/>
       <textarea class="content" placeholder="想说的..." v-model="content"></textarea>
-      <button class="submit" @click="addArticle">提交</button>
     </form>
+    <button class="submit" @click="addArticle">提交</button>
   </div>
 </template>
 
@@ -23,6 +24,17 @@ export default {
     }
   },
   methods: {
+    uploadImg (e) {
+      const avatar = e.target.files[0]
+      const xhr = new XMLHttpRequest()
+      let fd = new FormData()
+      fd.append('avatar', avatar)
+      xhr.open('post', '/api/article/uploadImg')
+      xhr.onload = function () {
+        console.log(xhr.status)
+      }
+      xhr.send(fd)
+    },
     addArticle () {
       var title = this.title
       var content = this.content
@@ -31,7 +43,6 @@ export default {
         title: title,
         content: content
       }, {}).then((response) => {
-        console.log(response)
       })
       this.$router.push('/')
     }
@@ -54,6 +65,9 @@ export default {
     margin: 20px 0px;
     font-size: 24px;
     border-radius: 3px;
+  }
+  .img {
+    height: 40px;
   }
   .content {
     width: 600px;

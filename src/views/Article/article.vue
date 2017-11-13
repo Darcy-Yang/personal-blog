@@ -23,7 +23,7 @@ export default {
   },
   data () {
     return {
-      article: this.$route.params.article[this.$route.params.id - 1]
+      article: this.$route.params.article
     }
   }
 }
@@ -34,14 +34,14 @@ export default {
   margin-bottom: 60px;
 }
 .article-main {
-  margin: 0 auto;
+  margin: 0 -8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   .title {
     width: 100%;
-    margin: 20px 0px;
+    margin: 20px -20px;
     padding: 20px 0px;
     text-align: center;
     font-size: 36px;

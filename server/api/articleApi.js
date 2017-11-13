@@ -1,5 +1,6 @@
 var models = require('../db')
 var express = require('express')
+var multer = require('multer')
 var router = express.Router()
 var mysql = require('mysql')
 var $sql = require('../sql')
@@ -18,11 +19,21 @@ var jsonWrite = function (res, ret) {
   }
 }
 
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'server/uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + 'jpg')
+  }
+})
+
+var upload = multer({ storage: storage })
+
   // 添加文章接口；
 router.post('/addArticle', (req, res) => {
   var sql = $sql.article.add
   var params = req.body
-  console.log(params)
   conn.query(sql, [params.title, params.content], function (err, result) {
     if (err) {
       console.log(err)
@@ -32,6 +43,11 @@ router.post('/addArticle', (req, res) => {
     }
   })
 })
+  // 上传图片
+router.post('/uploadImg', upload.single('avatar'), (req, res) => {
+  console.log(res.body)
+})
+
   // 获取文章接口；
 router.get('/allArticle', (req, res) => {
   var getSql = $sql.getArticle.get
@@ -44,4 +60,19 @@ router.get('/allArticle', (req, res) => {
     }
   })
 })
+
+  // 根据id获取特定的文章
+router.post('/findById', (req, res) => {
+  var findSql = $sql.findById.find
+  var params = req.body
+  conn.query(findSql, [params.id], function (err, result) {
+    if (err) {
+      console.log(err)
+    }
+    if (result) {
+      jsonWrite(res, result)
+    }
+  })
+})
+
 module.exports = router

@@ -5,6 +5,9 @@
     },
     getArticle: {
       get: 'select * from article'
+    },
+    findById: {
+      find: 'select * from article where id=?'
     }
   }
 
