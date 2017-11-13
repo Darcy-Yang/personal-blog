@@ -20,8 +20,14 @@ export default {
   data () {
     return {
       title: '',
-      content: ''
+      content: '',
+      maxId: 0
     }
+  },
+  created () {
+    this.$http.get('/api/article/getMaxId').then((response) => {
+      this.maxId = response.body
+    })
   },
   methods: {
     uploadImg (e) {
@@ -38,10 +44,12 @@ export default {
     addArticle () {
       var title = this.title
       var content = this.content
+      var avatar = `server/uploads/${this.maxId}.jpg`
       // 需要进行封装，同时把vue－resource替换成axios；
       this.$http.post('/api/article/addArticle', {
         title: title,
-        content: content
+        content: content,
+        avatar: avatar
       }, {}).then((response) => {
       })
       this.$router.push('/')

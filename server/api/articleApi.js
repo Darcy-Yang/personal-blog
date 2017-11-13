@@ -21,11 +21,37 @@ var jsonWrite = function (res, ret) {
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    // 路径这个坑踩了很久，一直以为应该是'server/uploads/'...
     cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '.jpg')
+    var maxSql = $sql.getMaxId.max
+    conn.query(maxSql, function (err, rows, field) {
+      if (err) {
+        console.log(err)
+      }
+      if (rows) {
+        const name = field[0].name
+        const id = rows[0][name] + 1
+        cb(null, id + '.jpg')
+      }
+    })
   }
+})
+
+  // 查找最大id值
+router.get('/getMaxId', (req, res) => {
+  var maxSql = $sql.getMaxId.max
+  conn.query(maxSql, function (err, rows, field) {
+    if (err) {
+      console.log(err)
+    }
+    if (rows) {
+      const name = field[0].name
+      const id = rows[0][name] + 1
+      jsonWrite(res, id)
+    }
+  })
 })
 
 var upload = multer({ storage: storage })
@@ -34,7 +60,7 @@ var upload = multer({ storage: storage })
 router.post('/addArticle', (req, res) => {
   var sql = $sql.article.add
   var params = req.body
-  conn.query(sql, [params.title, params.content], function (err, result) {
+  conn.query(sql, [params.title, params.content, params.avatar], function (err, result) {
     if (err) {
       console.log(err)
     }
@@ -45,7 +71,7 @@ router.post('/addArticle', (req, res) => {
 })
   // 上传图片
 router.post('/uploadImg', upload.single('avatar'), (req, res) => {
-  console.log(req.body)
+
 })
 
   // 获取文章接口；
