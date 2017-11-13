@@ -21,10 +21,10 @@ var jsonWrite = function (res, ret) {
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'server/uploads/')
+    cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + 'jpg')
+    cb(null, Date.now() + '.jpg')
   }
 })
 
@@ -45,7 +45,7 @@ router.post('/addArticle', (req, res) => {
 })
   // 上传图片
 router.post('/uploadImg', upload.single('avatar'), (req, res) => {
-  console.log(res.body)
+  console.log(req.body)
 })
 
   // 获取文章接口；
