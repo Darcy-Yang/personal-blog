@@ -7,7 +7,7 @@
       </div>
       <div class="display">
         <div class="article" @click="read(item)" v-for="item in article">
-          <img src='../../assets/image.png' alt="photo"/></br>
+          <img :src="item.avatar" alt="image"/></br>
           <div class="arrow"></div>
           <div class="title">
             <span>{{ item.title }}</span></br>

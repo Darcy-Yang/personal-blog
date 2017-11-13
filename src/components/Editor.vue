@@ -44,7 +44,7 @@ export default {
     addArticle () {
       var title = this.title
       var content = this.content
-      var avatar = `server/uploads/${this.maxId}.jpg`
+      var avatar = `static/uploads/${this.maxId}.jpg`
       // 需要进行封装，同时把vue－resource替换成axios；
       this.$http.post('/api/article/addArticle', {
         title: title,

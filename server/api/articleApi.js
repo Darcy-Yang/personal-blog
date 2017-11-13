@@ -22,7 +22,8 @@ var jsonWrite = function (res, ret) {
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // 路径这个坑踩了很久，一直以为应该是'server/uploads/'...
-    cb(null, 'uploads/')
+    // cb(null, 'uploads/')
+    cb(null, '../static/uploads/')
   },
   filename: function (req, file, cb) {
     var maxSql = $sql.getMaxId.max

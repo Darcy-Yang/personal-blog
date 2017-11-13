@@ -5,7 +5,7 @@
     <div class="title">
       <span>{{ this.article.title }}</span>
     </div>
-    <img src="../../assets/image.png"/>
+    <img :src="article.avatar"/>
     <div class="content">
       <span>{{ this.article.content }}</span>
     </div>
