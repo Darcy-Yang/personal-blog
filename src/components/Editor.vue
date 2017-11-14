@@ -61,12 +61,12 @@ export default {
 <style lang="less" scoped>
 .main {
   margin: 0 auto;
+  margin-top: 68px;
   width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 36px;
   .title {
     width: 600px;
     height: 40px;

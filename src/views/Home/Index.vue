@@ -1,10 +1,10 @@
 <template>
   <div class="main">
-    <NavBar/>
+    <TopNav class="top-nav"/>
     <div class="whole">
       <div class="navbar">
-        <NavBar class="content-nav" :showAuthor="showAuthor" :fontStyle="fontStyle" :items="items" />
-      </div>
+        <NavBar class="content-nav" :fontStyle="fontStyle" :items="items" />
+      </div> 
       <div class="display">
         <div class="article" @click="read(item)" v-for="item in article">
           <img :src="item.avatar" alt="image"/></br>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import TopNav from '@/components/nav/topNav'
 import NavBar from '@/components/nav/NavBar'
 
 import Vue from 'vue'
@@ -34,11 +35,11 @@ Vue.use(vueResource)
 export default {
   name: 'index',
   components: {
+    TopNav,
     NavBar
   },
   data () {
     return {
-      showAuthor: false,
       fontStyle: 'color: orange;',
       items: [
         { name: '优选', href: '#' },
@@ -68,9 +69,14 @@ export default {
 
 .main {
   margin: -8px;
+  background: rgb(245, 245, 245);
+  .top-nav {
+    margin-left: 0px;
+  }
 }
 .whole {
-  background: rgb(245, 245, 245);
+  margin-top: 68px;
+  // background: rgb(245, 245, 245);
 }
 .navbar {
   margin-top: -8px;

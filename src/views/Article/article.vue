@@ -1,26 +1,20 @@
 <template>
-<div class="whole">
-  <NavBar/>
-  <div class="article-main">
-    <div class="title">
-      <span>{{ this.article.title }}</span>
-    </div>
-    <img :src="article.avatar"/>
-    <div class="content">
-      <span>{{ this.article.content }}</span>
+  <div class="whole">
+    <div class="article-main">
+      <div class="title">
+        <span>{{ this.article.title }}</span>
+      </div>
+      <img :src="article.avatar" />
+      <div class="content">
+        <span>{{ this.article.content }}</span>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-import NavBar from '@/components/nav/NavBar'
-
 export default {
   name: 'article',
-  components: {
-    NavBar
-  },
   data () {
     return {
       article: this.$route.params.article
@@ -33,6 +27,7 @@ export default {
 .whole {
   margin-bottom: 60px;
 }
+
 .article-main {
   margin: 0 -8px;
   display: flex;
@@ -41,7 +36,7 @@ export default {
   justify-content: center;
   .title {
     width: 100%;
-    margin: 20px -20px;
+    margin: 10px -20px 30px -20px;
     padding: 20px 0px;
     text-align: center;
     font-size: 36px;

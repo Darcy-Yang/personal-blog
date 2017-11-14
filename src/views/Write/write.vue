@@ -1,18 +1,18 @@
 <template>
   <div>
-    <NavBar/>
+    <TopNav/>
     <Editor/>
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/nav/NavBar'
+import TopNav from '@/components/nav/topNav'
 import Editor from '@/components/Editor'
 
 export default {
   name: 'write',
   components: {
-    NavBar,
+    TopNav,
     Editor
   }
 }

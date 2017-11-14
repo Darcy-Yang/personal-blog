@@ -1,6 +1,5 @@
 <template>
 <div class="main">
-  <span v-if="showAuthor">{{ author }}</span>
   <ul class="nav">
     <li v-for="item in items"><a :style="fontStyle" :href="item.href">{{item.name}}</a></li>
   </ul>
@@ -11,28 +10,13 @@
 export default {
   name: 'navbar',
   props: {
-    showAuthor: {
-      type: Boolean,
-      default: true
-    },
     fontStyle: {
       type: String,
       default: ''
     },
     items: {
       type: Array,
-      default: () => [
-        { name: '文章', href: '#' },
-        { name: '文章', href: '#' },
-        { name: '文章', href: '#' },
-        { name: '文章', href: '#' },
-        { name: '关于我', href: '#' }
-      ]
-    }
-  },
-  data () {
-    return {
-      author: 'Daniel Yang'
+      default: null
     }
   }
 }
@@ -41,7 +25,7 @@ export default {
 <style lang="less" scoped>
 .main {
   display: flex;
-  margin: 18px 120px 18px 40px;
+  margin: 18px 2px 18px 40px;
   align-items: center;
   justify-content: space-between;
   span {
