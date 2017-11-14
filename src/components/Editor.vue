@@ -61,7 +61,7 @@ export default {
 <style lang="less" scoped>
 .main {
   margin: 0 auto;
-  margin-top: 68px;
+  margin-top: 88px;
   width: 600px;
   display: flex;
   flex-direction: column;

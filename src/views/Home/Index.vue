@@ -56,6 +56,7 @@ export default {
     this.$http.get('/api/article/allArticle').then((response) => {
       this.article = response.body
     })
+    // var overHeight = document.documentElement.scrollTop || document.body.scrollTop
   },
   methods: {
     read (item) {
@@ -77,7 +78,7 @@ export default {
   }
 }
 .whole {
-  margin-top: 68px;
+  margin-top: 88px;
 }
 .navbar {
   margin-top: -8px;

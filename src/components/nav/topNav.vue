@@ -43,13 +43,12 @@ export default {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 68px;
-  // margin: 18px 120px 18px 40px;
-  margin: -68px 0 0 -8px;
+  height: 88px;
+  margin: -88px 0 0 -8px;
   align-items: center;
   justify-content: space-between;
-  opacity: 0.6;
-  background: rgb(245, 245, 245); 
+  background: white;
+  z-index: 999;
   span {
     padding: 2px 10px;
     margin-left: 32px;
@@ -63,7 +62,6 @@ export default {
     margin-right: 60px;
     list-style: none;
     a {
-      // color: gray;
       color: black;
       text-decoration: none;
     }

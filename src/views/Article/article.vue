@@ -50,7 +50,9 @@ export default {
     width: 40%;
     padding: 20px;
     font-size: 18px;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    text-align: center;
+    text-align-last: left;
   }
 }
 </style>
