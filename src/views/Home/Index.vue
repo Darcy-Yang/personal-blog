@@ -7,7 +7,9 @@
       </div> 
       <div class="display">
         <div class="article" @click="read(item)" v-for="item in article">
-          <img :src="item.avatar" alt="image"/></br>
+          <div class="image">
+            <img :src="item.avatar" alt="image"/></br>
+          </div>
           <div class="arrow"></div>
           <div class="title">
             <span>{{ item.title }}</span></br>
@@ -76,7 +78,6 @@ export default {
 }
 .whole {
   margin-top: 68px;
-  // background: rgb(245, 245, 245);
 }
 .navbar {
   margin-top: -8px;
@@ -96,12 +97,20 @@ export default {
   .article {
     margin: 0px 10px 28px 10px;
     width: 22%;
-    height: 522px;
+    height: 502px;
     cursor: pointer;
     background: white;
+    overflow: hidden;
+    .image {
+      overflow: hidden;
+    }
     img {
       width: 100%;
-      height: 215px;
+      height: 168px;
+      transition: transform 2s;
+    }
+    img:hover {
+      transform: scale(1.2,1.2);
     }
     .arrow {
       width: 0;
@@ -120,6 +129,14 @@ export default {
     }
     .content {
       margin: 10px 16px 0px 16px;
+    }
+  }
+  .article:hover {
+    color: white;
+    box-shadow: 5px 5px 10px #8f8780;
+    background: #f07f16;
+    .arrow {
+      border-bottom: 12px solid #f07f16;
     }
   }
 }
