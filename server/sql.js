@@ -1,7 +1,7 @@
   // sql语句；
   var sqlMap = {
     article: {
-      add: 'insert into article(title, content, avatar) values (?,?,?)'
+      add: 'insert into article(title, content, avatar, date) values (?,?,?,?)'
     },
     getArticle: {
       get: 'select * from article'

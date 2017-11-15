@@ -61,7 +61,7 @@ var upload = multer({ storage: storage })
 router.post('/addArticle', (req, res) => {
   var sql = $sql.article.add
   var params = req.body
-  conn.query(sql, [params.title, params.content, params.avatar], function (err, result) {
+  conn.query(sql, [params.title, params.content, params.avatar, params.date], function (err, result) {
     if (err) {
       console.log(err)
     }

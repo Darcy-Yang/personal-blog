@@ -63,7 +63,7 @@ export default {
     text-align-last: left;
     word-wrap: break-word;
     white-space: normal;
-    background: #e3dcdc;
+    background: #ebebeb;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
     .content-word {

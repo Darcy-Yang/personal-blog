@@ -18,6 +18,10 @@
             <span>
               {{ item.content }}
             </span>
+          </div>  
+          <div class="time-stamp">
+            <span class="line">----------------------------------</span></br>
+            <span class="time">{{ item.date }}</span>
           </div>
         </div>
       </div>
@@ -72,7 +76,7 @@ export default {
 
 .main {
   margin: -8px;
-  background: rgb(245, 245, 245);
+  background: #ebebeb;
   .top-nav {
     margin-left: 0px;
   }
@@ -125,18 +129,38 @@ export default {
       border-bottom: 12px solid white;
     }
     .title {
+      height: 40px;
       text-align: center;
       margin-top: 20px;
       font-size: 26px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .content {
+      height: 190px;
       margin: 10px 16px 0px 16px;
+      overflow: hidden;
+    }
+    .time-stamp {
+      position: relative;
+      text-align: center;
+      .line {
+        color: #f07f16;
+      }
+      .time {
+        margin-right: 175px;
+        font-size: 14px;
+      }
     }
   }
   .article:hover {
     color: white;
     box-shadow: 5px 5px 10px #8f8780;
     background: #f07f16;
+    .line {
+      color: white;
+    }
     .arrow {
       border-bottom: 12px solid #f07f16;
     }
