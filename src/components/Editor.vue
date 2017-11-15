@@ -5,7 +5,7 @@
       <input class="img" type="file" placeholder="上传封面图片" @change="uploadImg"/>
       <textarea class="content" placeholder="想说的..." cols="3" wrap="hard" v-model="content"></textarea>
     </form>
-    <button class="submit" @click="addArticle">提交</button>
+    <button class="submit" @click="addArticle">完成</button>
   </div>
 </template>
 

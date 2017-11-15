@@ -23,9 +23,9 @@ export default {
       type: Array,
       default: () => [
         { name: '首页', href: '/#/' },
-        { name: '文章', href: '#' },
-        { name: '文章', href: '#' },
-        { name: '文章', href: '#' },
+        { name: '音乐', href: '#' },
+        { name: '图片', href: '#' },
+        { name: '书评', href: '#' },
         { name: '关于我', href: '#' }
       ]
     }
