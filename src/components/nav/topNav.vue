@@ -22,7 +22,7 @@ export default {
     items: {
       type: Array,
       default: () => [
-        { name: '文章', href: '#' },
+        { name: '首页', href: '/#/' },
         { name: '文章', href: '#' },
         { name: '文章', href: '#' },
         { name: '文章', href: '#' },
@@ -49,6 +49,7 @@ export default {
   justify-content: space-between;
   background: white;
   z-index: 999;
+  box-shadow: 0px 2px 8px #665e5e;
   span {
     padding: 2px 10px;
     margin-left: 32px;
@@ -64,6 +65,9 @@ export default {
     a {
       color: black;
       text-decoration: none;
+    }
+    a:hover {
+      color: orange;
     }
   }
 }

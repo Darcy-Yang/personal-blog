@@ -3,7 +3,7 @@
     <form>
       <input class="title" type="text" placeholder="标题" v-model="title"/>
       <input class="img" type="file" placeholder="上传封面图片" @change="uploadImg"/>
-      <textarea class="content" placeholder="想说的..." v-model="content"></textarea>
+      <textarea class="content" placeholder="想说的..." cols="3" wrap="hard" v-model="content"></textarea>
     </form>
     <button class="submit" @click="addArticle">提交</button>
   </div>
@@ -42,13 +42,16 @@ export default {
       xhr.send(fd)
     },
     addArticle () {
+      var reg1 = new RegExp('', 'g')
       var title = this.title
       var content = this.content
+      console.log(this.content)
+      var regContent = content.replace(reg1, '<br>')
       var avatar = `static/uploads/${this.maxId}.jpg`
       // 需要进行封装，同时把vue－resource替换成axios；
       this.$http.post('/api/article/addArticle', {
         title: title,
-        content: content,
+        content: regContent,
         avatar: avatar
       }, {}).then((response) => {
       })
@@ -83,6 +86,8 @@ export default {
     resize: none;
     font-size: 16px;
     border-radius: 3px;
+    word-wrap: break-word;
+    white-space: normal;
   }
   .submit {
     align-self: flex-end;

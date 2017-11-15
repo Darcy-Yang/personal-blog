@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import TopNav from '@/components/nav/topNav'
+import TopNav from '@/components/nav/TopNav'
 import NavBar from '@/components/nav/NavBar'
 
 import Vue from 'vue'
@@ -101,6 +101,7 @@ export default {
     height: 502px;
     cursor: pointer;
     background: white;
+    border-radius: 8px;
     overflow: hidden;
     .image {
       overflow: hidden;

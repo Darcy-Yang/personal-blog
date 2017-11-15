@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TopNav from '@/components/nav/topNav'
+import TopNav from '@/components/nav/TopNav'
 import Editor from '@/components/Editor'
 
 export default {
