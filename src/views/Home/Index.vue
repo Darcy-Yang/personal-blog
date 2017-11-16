@@ -50,7 +50,7 @@ export default {
       items: [
         { name: '优选', href: '#' },
         { name: '优选', href: '#' },
-        { name: '优选', href: '#' },
+        { name: '上传音乐', href: '#/upload-music' },
         { name: '写文章', href: '#/write' }
       ],
       article: null

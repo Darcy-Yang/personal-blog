@@ -42,7 +42,7 @@ var storage = multer.diskStorage({
 
   // 查找最大id值
 router.get('/getMaxId', (req, res) => {
-  var maxSql = $sql.getMaxId.max
+  var maxSql = $sql.article.max
   conn.query(maxSql, function (err, rows, field) {
     if (err) {
       console.log(err)
@@ -77,7 +77,7 @@ router.post('/uploadImg', upload.single('avatar'), (req, res) => {
 
   // 获取文章接口；
 router.get('/allArticle', (req, res) => {
-  var getSql = $sql.getArticle.get
+  var getSql = $sql.article.get
   conn.query(getSql, function (err, result) {
     if (err) {
       console.log(err)
@@ -90,7 +90,7 @@ router.get('/allArticle', (req, res) => {
 
   // 根据id获取特定的文章
 router.post('/findById', (req, res) => {
-  var findSql = $sql.findById.find
+  var findSql = $sql.article.find
   var params = req.body
   conn.query(findSql, [params.id], function (err, result) {
     if (err) {
