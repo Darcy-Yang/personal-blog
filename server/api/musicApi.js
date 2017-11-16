@@ -23,7 +23,17 @@ var storage = multer.diskStorage({
     cb(null, '../static/music/')
   },
   filename: function (req, file, cb) {
-    cb(null, 'favorite.mp3')
+    var maxSql = $sql.music.max
+    conn.query(maxSql, function (err, rows, field) {
+      if (err) {
+        console.log(err)
+      }
+      if (rows) {
+        const name = field[0].name
+        const id = rows[0][name] + 1
+        cb(null, id + '.mp3')
+      }
+    })
   }
 })
 
@@ -32,10 +42,24 @@ var upload = multer({ storage: storage })
 router.post('/uploadMusic', upload.single('music'), (req, res) => {
 })
 
+router.get('/getMaxId', (req, res) => {
+  var maxSql = $sql.music.max
+  conn.query(maxSql, function (err, rows, field) {
+    if (err) {
+      console.log(err)
+    }
+    if (rows) {
+      const name = field[0].name
+      const id = rows[0][name] + 1
+      jsonWrite(res, id)
+    }
+  })
+})
+
 router.post('/addMusic', (req, res) => {
   var musicSql = $sql.music.add
   var params = req.body
-  conn.query(musicSql, [params.path], function (err, result) {
+  conn.query(musicSql, [params.name, params.path, params.date], function (err, result) {
     if (err) {
       console.log(err)
     }

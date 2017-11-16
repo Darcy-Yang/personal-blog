@@ -26,7 +26,7 @@ var storage = multer.diskStorage({
     cb(null, '../static/uploads/')
   },
   filename: function (req, file, cb) {
-    var maxSql = $sql.getMaxId.max
+    var maxSql = $sql.article.max
     conn.query(maxSql, function (err, rows, field) {
       if (err) {
         console.log(err)

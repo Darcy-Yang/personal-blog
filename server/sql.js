@@ -7,8 +7,9 @@
       max: 'select max(id) from article'
     },
     music: {
-      add: 'insert into music(path) values (?)',
-      get: 'select * from music'
+      add: 'insert into music(name, path, date) values (?,?,?)',
+      get: 'select * from music',
+      max: 'select max(id) from music'
     }
   }
 
