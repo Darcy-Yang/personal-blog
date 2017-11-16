@@ -2,7 +2,7 @@
   <div class="main-music">
      <TopNav/> 
     <div class="show-music">
-      <vue-aplayer class="aplayer" :music="music" :autoplay="autoplay"></vue-aplayer>
+      <vue-aplayer class="aplayer" :music="music" ref="player" v-if="flag"></vue-aplayer>
     </div>
   </div>
 </template>
@@ -23,19 +23,23 @@ export default {
   },
   data () {
     return {
-      music: {
-        title: '',
-        author: '',
-        url: 'static/music/1.mp3',
-        pic: 'static/uploads/25.jpg',
-        lrc: ''
-      },
-      autoplay: false
+      // music: {
+      //   title: '',
+      //   author: '',
+      //   url: '',
+      //   pic: 'static/uploads/25.jpg',
+      //   lrc: ''
+      // },
+      music: null,
+      flag: false
     }
   },
   created () {
     this.$http.get('/api/music/allMusic').then((response) => {
       this.music = response.body
+      if (this.music !== null) {
+        this.flag = true
+      }
     })
   }
 }

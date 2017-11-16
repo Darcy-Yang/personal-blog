@@ -65,6 +65,7 @@ export default {
         lrc: ''
       }, {}).then((response) => {
       })
+      this.$router.push('/music')
     }
   }
 }
@@ -93,6 +94,7 @@ export default {
   margin: 24px 0px 0px 365px;
   width: 90px;
   height: 30px;
+  cursor: pointer;
   background: rgb(58, 139, 250);
   border: none;
   border-radius: 3px;
