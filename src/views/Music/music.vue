@@ -1,19 +1,14 @@
 <template>
   <div class="main-music">
-    <TopNav/>
+     <TopNav/> 
     <div class="show-music">
-      <div class="music" v-for="item in music">
-        <img class="image" src="static/uploads/25.jpg" alt="image"/>
-        <embed class="music-list" :src="item.path" autostart="false"/></br>
-          <div class="music-name">
-            <span>{{ item.name }}</span>
-          </div>
-      </div>
+      <vue-aplayer class="aplayer" :music="music" :autoplay="autoplay"></vue-aplayer>
     </div>
   </div>
 </template>
 <script>
 import TopNav from '@/components/nav/TopNav'
+import VueAplayer from 'vue-aplayer'
 
 import Vue from 'vue'
 import vueResource from 'vue-resource'
@@ -23,11 +18,19 @@ Vue.use(vueResource)
 export default {
   name: 'music',
   components: {
-    TopNav
+    TopNav,
+    'vue-aplayer': VueAplayer
   },
   data () {
     return {
-      music: null
+      music: {
+        title: '',
+        author: '',
+        url: 'static/music/1.mp3',
+        pic: 'static/uploads/25.jpg',
+        lrc: ''
+      },
+      autoplay: false
     }
   },
   created () {
@@ -44,27 +47,11 @@ export default {
 }
 .show-music {
   display: flex;
-
-}
-.music {
-  display: flex;
-  margin: 0px 20px;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.image {
-  margin-top: 20px;
-  width: 200px;
-  height: 160px;
-}
-.music-list {
-  width: 200px;
-  height: 62px;
-  background-color: #ebebeb;
-}
-.music-name {
-  margin-top: -16px;
-  text-align: center;
+  .aplayer {
+    margin-top: 60px;
+    width: 60%;
+  }
 }
 </style>

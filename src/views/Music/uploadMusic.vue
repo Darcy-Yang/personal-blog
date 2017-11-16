@@ -53,10 +53,16 @@ export default {
       xhr.send(fd)
     },
     compelete () {
+      var nameArr = this.name.split('-', 2)
+      var author = nameArr[0]
+      var reg = new RegExp('.mp3', 'g')
+      var title = nameArr[1].replace(reg, '')
       this.$http.post('/api/music/addMusic', {
-        name: this.name,
-        path: `static/music/${this.maxId}.mp3`,
-        date: this.date
+        title: title,
+        author: author,
+        url: `static/music/${this.maxId}.mp3`,
+        pic: '',
+        lrc: ''
       }, {}).then((response) => {
       })
     }
