@@ -3,7 +3,8 @@
     <TopNav/>
     <div class="show-music">
       <div class="music" v-for="item in music">
-         <embed class="music-list" :src="item.path" autostart="false"/></br>
+        <img class="image" src="static/uploads/25.jpg" alt="image"/>
+        <embed class="music-list" :src="item.path" autostart="false"/></br>
           <div class="music-name">
             <span>{{ item.name }}</span>
           </div>
@@ -39,18 +40,31 @@ export default {
 <style lang="less" scoped>
 .main-music {
   margin-top: 88px;
+  background: #ebebeb;
 }
 .show-music {
   display: flex;
+
+}
+.music {
+  display: flex;
+  margin: 0px 20px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.music-list {
+.image {
   margin-top: 20px;
   width: 200px;
-  height: 200px;
+  height: 160px;
+}
+.music-list {
+  width: 200px;
+  height: 62px;
+  background-color: #ebebeb;
 }
 .music-name {
+  margin-top: -16px;
   text-align: center;
 }
 </style>
