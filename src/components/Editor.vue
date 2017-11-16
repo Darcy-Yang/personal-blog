@@ -59,7 +59,7 @@ export default {
         date: timeStamp
       }, {}).then((response) => {
       })
-      this.$router.push('/')
+      this.$router.push('/index')
     }
   }
 }

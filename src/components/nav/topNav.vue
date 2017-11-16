@@ -1,35 +1,29 @@
 <template>
 <div class="main">
-  <span v-if="showAuthor">{{ author }}</span>
-  <ul class="nav">
-    <li v-for="item in items"><a :style="fontStyle" :href="item.href">{{item.name}}</a></li>
-  </ul>
+  <span class="author">{{ author }}</span>
+  <div class="tabs">
+    <router-link to="/index" active-class="active">
+      <span>首页</span>
+    </router-link>
+    <router-link to="/music" active-class="active">
+      <span>音乐</span>
+    </router-link>
+    <router-link to="/photo" active-class="active">
+      <span>图片</span>
+    </router-link>
+    <router-link to="/book" active-class="active">
+      <span>书评</span>
+    </router-link>
+    <router-link to="/me" active-class="active">
+      <span>关于我</span>
+    </router-link>
+  </div>
 </div>
 </template>
 
 <script>
 export default {
   name: 'navbar',
-  props: {
-    showAuthor: {
-      type: Boolean,
-      default: true
-    },
-    fontStyle: {
-      type: String,
-      default: ''
-    },
-    items: {
-      type: Array,
-      default: () => [
-        { name: '首页', href: '/#/' },
-        { name: '音乐', href: '#/music' },
-        { name: '图片', href: '#' },
-        { name: '书评', href: '#' },
-        { name: '关于我', href: '#' }
-      ]
-    }
-  },
   data () {
     return {
       author: 'Daniel Yang'
@@ -50,7 +44,7 @@ export default {
   background: white;
   z-index: 999;
   box-shadow: 0px 2px 8px #665e5e;
-  span {
+  .author {
     padding: 2px 10px;
     margin-left: 32px;
     font-size: 24px;
@@ -58,16 +52,26 @@ export default {
     color: white;
     background: blue;
   }
-  li {
-    float: left;
-    margin-right: 60px;
-    list-style: none;
+  .tabs {
+    margin-right: 20px;
+    font-size: 24px;
+    font-family: Arial,Verdana,Sans-serif;
+    span {
+      padding-right: 40px;
+      color: #000;
+    }
     a {
-      color: black;
       text-decoration: none;
     }
     a:hover {
-      color: orange;
+      span {
+        color: orange;
+      }
+    }
+    .active {
+      span {
+        color: orange;
+      }
     }
   }
 }

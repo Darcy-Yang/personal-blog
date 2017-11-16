@@ -7,7 +7,7 @@
       </div>
       <img :src="article.avatar" />
       <div class="content">
-        <p class="content-word">{{ this.article.content }}</p>
+        <span class="content-word">{{ this.article.content }}</span>
       </div>
     </div>
   </div>
