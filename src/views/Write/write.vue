@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav/>
+    <TopNav class="top-nav"/>
     <Editor/>
   </div>
 </template>
@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.top-nav {
+  margin-left: -8px;
+}
 </style>
 

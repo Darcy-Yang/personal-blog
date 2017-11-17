@@ -59,7 +59,7 @@ router.get('/getMaxId', (req, res) => {
 router.post('/addMusic', (req, res) => {
   var musicSql = $sql.music.add
   var params = req.body
-  conn.query(musicSql, [params.title, params.author, params.url, params.pic, params.lrc], function (err, result) {
+  conn.query(musicSql, [params.name, params.path, params.cover], function (err, result) {
     if (err) {
       console.log(err)
     }
