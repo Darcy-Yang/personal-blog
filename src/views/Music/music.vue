@@ -3,7 +3,7 @@
      <TopNav/> 
      <div class="display">
       <div class="show-music" v-for="(item, index) in music">
-        <img class="image" :src="item.cover" alt="image" @click="test(index)"/>
+        <img class="image" :src="item.cover" alt="image" ref="cover" @click="test(index)"/>
          <span class="hole"></span> 
          <span class="second-hole"></span> 
         <audio class="audio" :src="item.path" hidden="hidden" controls="controls" ref="player">no support</audio>
@@ -46,8 +46,10 @@ export default {
     test (index) {
       if (!this.play) {
         this.$refs.player[index].play()
+        this.$refs.cover[0].setAttribute('class', 'image test')
       } else {
         this.$refs.player[index].pause()
+        this.$refs.cover[0].setAttribute('class', 'image')
       }
       this.play = !this.play
     }
@@ -80,7 +82,7 @@ export default {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
   }
-  .image:hover {
+  .test {
     animation: rotation 3s linear infinite;
   }
   .hole {
