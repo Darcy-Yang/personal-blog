@@ -46,10 +46,10 @@ export default {
     test (index) {
       if (!this.play) {
         this.$refs.player[index].play()
-        this.$refs.cover[0].setAttribute('class', 'image test')
+        this.$refs.cover[index].setAttribute('class', 'image rotate')
       } else {
         this.$refs.player[index].pause()
-        this.$refs.cover[0].setAttribute('class', 'image')
+        this.$refs.cover[index].setAttribute('class', 'image')
       }
       this.play = !this.play
     }
@@ -58,31 +58,37 @@ export default {
 </script>
 <style lang="less" scoped>
 .main-music {
-  margin: 88px -6px 0px -6px;
+  margin: 80px -6px 0px -6px;
+  min-height: 500px;
   background: #ebebeb;
 }
 .display {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .show-music {
   display: flex;
   margin: 20px;
   flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
   .image {
     width: 160px;
     height: 160px;
+    margin-right: 20px;
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0px 0px 12px #000;
+  }
+  .image:hover {
+    box-shadow: 0px 0px 0px #fff;
   }
   @keyframes rotation {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
   }
-  .test {
+  .rotate {
     animation: rotation 3s linear infinite;
   }
   .hole {
@@ -110,7 +116,7 @@ export default {
   }
   .name {
     width: 160px;
-    margin: -60px 0px 20px 0px;
+    margin: -54px 0px 20px 0px;
     text-align: center;
   }
 }

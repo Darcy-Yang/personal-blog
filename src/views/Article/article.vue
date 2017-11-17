@@ -57,6 +57,7 @@ export default {
   }
   .content {
     width: 40%;
+    margin-bottom: 20px;
     font-size: 18px;
     letter-spacing: 1.2px;
     text-align: center;
