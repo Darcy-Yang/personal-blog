@@ -5,6 +5,7 @@ import Article from '@/views/Article/article'
 import Write from '@/views/Write/write'
 import Music from '@/views/Music/music'
 import UploadMusic from '@/views/Music/uploadMusic'
+import Photo from '@/views/Photo/photo'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/upload-music',
       component: UploadMusic,
       name: 'uploadMusic'
+    },
+    {
+      path: '/photo',
+      component: Photo,
+      name: 'photo'
     }
   ]
 })

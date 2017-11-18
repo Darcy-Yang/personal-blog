@@ -49,7 +49,7 @@ export default {
       fontStyle: 'color: orange;',
       items: [
         { name: '优选', href: '#' },
-        { name: '优选', href: '#' },
+        { name: '上传图片', href: '#' },
         { name: '上传音乐', href: '#/upload-music' },
         { name: '写文章', href: '#/write' }
       ],
