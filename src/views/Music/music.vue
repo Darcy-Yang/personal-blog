@@ -3,7 +3,7 @@
      <TopNav/> 
      <div class="display">
       <div class="show-music" v-for="(item, index) in music">
-        <img class="image" :src="item.cover" alt="image" ref="cover" @click="test(index)"/>
+        <img class="image" :src="item.cover" alt="image" ref="cover" @click="enjoy(index)"/>
          <span class="hole"></span> 
          <span class="second-hole"></span> 
         <audio class="audio" :src="item.path" hidden="hidden" controls="controls" ref="player">no support</audio>
@@ -14,7 +14,6 @@
 </template>
 <script>
 import TopNav from '@/components/nav/TopNav'
-import VueAplayer from 'vue-aplayer'
 
 import Vue from 'vue'
 import vueResource from 'vue-resource'
@@ -24,14 +23,14 @@ Vue.use(vueResource)
 export default {
   name: 'music',
   components: {
-    TopNav,
-    'vue-aplayer': VueAplayer
+    TopNav
   },
   data () {
     return {
       music: null,
       flag: false,
-      play: false
+      isPlay: false,
+      playList: []
     }
   },
   created () {
@@ -43,15 +42,23 @@ export default {
     })
   },
   methods: {
-    test (index) {
-      if (!this.play) {
-        this.$refs.player[index].play()
-        this.$refs.cover[index].setAttribute('class', 'image rotate')
-      } else {
-        this.$refs.player[index].pause()
-        this.$refs.cover[index].setAttribute('class', 'image')
+    enjoy (index) {
+      let order = this.playList.length
+      let lastPlay = this.playList[order - 1]
+      this.playList.push(index)
+      this.$refs.player[index].play()
+      this.$refs.cover[index].setAttribute('class', 'image rotate')
+      if (lastPlay !== undefined) {
+        this.$refs.player[lastPlay].pause()
+        this.$refs.cover[lastPlay].setAttribute('class', 'image')
+        if (lastPlay === index) {
+          if (this.isPlay) {
+            this.$refs.player[index].play()
+            this.$refs.cover[index].setAttribute('class', 'image rotate')
+          }
+          this.isPlay = !this.isPlay
+        }
       }
-      this.play = !this.play
     }
   }
 }
