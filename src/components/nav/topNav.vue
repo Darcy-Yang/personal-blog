@@ -38,7 +38,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 88px;
-  margin: -88px 0px 0 0px;
+  margin: -88px 0px 0px -8px;
   align-items: center;
   justify-content: space-between;
   background: white;

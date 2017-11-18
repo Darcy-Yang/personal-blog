@@ -42,10 +42,10 @@ export default {
       xhr.send(fd)
     },
     addArticle () {
-      // var reg1 = new RegExp('', 'g')
-      var title = this.title
-      var content = this.content
-      // var regContent = content.replace(reg1, '<br>')
+      // var reg = new RegExp(/\n/, 'g')
+      // var title = this.title
+      // var content = this.content
+      // var regContent = this.content.replace(reg, '</br>')
       var avatar = `static/uploads/${this.maxId}.jpg`
       var date = new Date()
       var month = date.getMonth()
@@ -53,8 +53,8 @@ export default {
       var timeStamp = `${month + 1}月${day}日`
       // 需要进行封装，同时把vue－resource替换成axios；
       this.$http.post('/api/article/addArticle', {
-        title: title,
-        content: content,
+        title: this.title,
+        content: this.content,
         avatar: avatar,
         date: timeStamp
       }, {}).then((response) => {
@@ -92,6 +92,7 @@ export default {
     border-radius: 3px;
     word-wrap: break-word;
     white-space: normal;
+    overflow-y: hidden;
   }
   .submit {
     align-self: flex-end;

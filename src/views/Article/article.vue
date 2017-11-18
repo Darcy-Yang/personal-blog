@@ -7,7 +7,7 @@
       </div>
       <img :src="article.avatar" />
       <div class="content">
-        <span class="content-word">{{ this.article.content }}</span>
+        <pre class="content-word">{{ this.article.content }}</pre>
       </div>
     </div>
   </div>
@@ -56,19 +56,18 @@ export default {
     border-top-right-radius: 16px;
   }
   .content {
-    width: 40%;
+    width: 36.8%;
+    padding: 20px 20px;
     margin-bottom: 20px;
     font-size: 18px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    text-align-last: left;
+    letter-spacing: 1.1px;
     word-wrap: break-word;
-    white-space: normal;
     background: #ebebeb;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
     .content-word {
-      padding: 20px;
+     white-space: pre-wrap;
+     font-weight: bold;
     }
   }
 }
