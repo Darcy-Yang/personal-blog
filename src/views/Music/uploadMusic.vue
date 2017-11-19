@@ -57,8 +57,7 @@ export default {
       var regName = this.name.replace(reg, '')
       this.$http.post('/api/music/addMusic', {
         name: regName,
-        path: `static/music/${this.maxId}.mp3`,
-        cover: `static/music/cover/${this.maxId}.jpg`
+        path: `static/music/${this.maxId}.mp3`
       }, {}).then((response) => {
       })
       this.$router.push('/music')

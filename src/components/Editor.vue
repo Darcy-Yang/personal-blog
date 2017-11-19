@@ -42,10 +42,6 @@ export default {
       xhr.send(fd)
     },
     addArticle () {
-      // var reg = new RegExp(/\n/, 'g')
-      // var title = this.title
-      // var content = this.content
-      // var regContent = this.content.replace(reg, '</br>')
       var avatar = `static/uploads/${this.maxId}.jpg`
       var date = new Date()
       var month = date.getMonth()

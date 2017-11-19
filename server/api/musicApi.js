@@ -4,6 +4,9 @@ var multer = require('multer')
 var router = express.Router()
 var mysql = require('mysql')
 var $sql = require('../sql')
+var jsmediatags = require('jsmediatags')
+var btoa = require('btoa')
+var id = 0
 
 var conn = mysql.createConnection(models.mysql)
 conn.connect()
@@ -30,8 +33,8 @@ var storage = multer.diskStorage({
       }
       if (rows) {
         const name = field[0].name
-        const id = rows[0][name] + 1
-        cb(null, id + '.mp3')
+        id = rows[0][name] + 1
+        cb(null, `${id}.mp3`)
       }
     })
   }
@@ -40,6 +43,8 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 router.post('/uploadMusic', upload.single('music'), (req, res) => {
+  if (res) {
+  }
 })
 
 router.get('/getMaxId', (req, res) => {
@@ -59,12 +64,28 @@ router.get('/getMaxId', (req, res) => {
 router.post('/addMusic', (req, res) => {
   var musicSql = $sql.music.add
   var params = req.body
-  conn.query(musicSql, [params.name, params.path, params.cover], function (err, result) {
-    if (err) {
-      console.log(err)
-    }
-    if (result) {
-      jsonWrite(res, result)
+  jsmediatags.read(`../static/music/${id}.mp3`, {
+    onSuccess: function (tag) {
+      var image = tag.tags.picture
+      if (image) {
+        var base64String = ''
+        for (var i = 0; i < image.data.length; i++) {
+          base64String += String.fromCharCode(image.data[i])
+        }
+        var partBase64 = btoa(base64String)
+        var base64 = 'data:' + image.format + ';base64,' + partBase64
+        conn.query(musicSql, [params.name, params.path, base64], function (err, result) {
+          if (err) {
+            console.log(err)
+          }
+          if (result) {
+            jsonWrite(res, result)
+          }
+        })
+      }
+    },
+    onError: function (err) {
+      console.log(':(', err)
     }
   })
 })

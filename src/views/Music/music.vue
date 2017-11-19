@@ -3,7 +3,7 @@
      <TopNav/> 
      <div class="display">
       <div class="show-music" v-for="(item, index) in music">
-        <img class="image" :src="item.cover" alt="image" ref="cover" @click="enjoy(index)"/>
+        <img class="image" alt="image" :src="item.cover" ref="cover" @click="enjoy(index)"/>
          <span class="hole"></span> 
          <span class="second-hole"></span> 
         <audio class="audio" :src="item.path" hidden="hidden" controls="controls" ref="player">no support</audio>
